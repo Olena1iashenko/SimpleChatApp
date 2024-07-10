@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { chatAppAPI } from "../../helpers/api.js";
+// import { chatAppAPI } from "../helpers/api.js";
 
 export const fetchAllChatsThunk = createAsyncThunk(
   "chats/fetchAllChats",
@@ -33,7 +33,7 @@ export const editChatThunk = createAsyncThunk(
       const { data } = await chatAppAPI.patch(`/chats/${id}`, {
         creator,
         title,
-        messages
+        messages,
       });
       return data;
     } catch (error) {
@@ -53,4 +53,3 @@ export const deleteChatThunk = createAsyncThunk(
     }
   }
 );
-
